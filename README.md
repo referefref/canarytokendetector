@@ -1,6 +1,6 @@
 # Microsoft Word Canary Token Detector
 
-A simple script to detect and remove [***Microsoft Word Canary Tokens***](https://docs.canarytokens.org/guide/ms-word-token.html) 
+A simple script to detect and remove [***Canary Tokens***](https://canarytokens.org/) 
 
 ![image](https://github.com/referefref/canarytokendetector/assets/56499429/0b62b080-90cb-45d9-ba29-47ba007d8399)
 
