@@ -169,14 +169,15 @@ sensitive_command () {
 # Nullify will break ALL sensitive command canary tokens, and maybe some other stuff...
 
 	if [[ $verbose == "1" ]]; then echo "Checking if canary token is present in $candidate"; fi
-	if grep -qR "*CMD*canarytokens.com" $candidate
+	isSensComCan=$(grep -e ".*CMD.*canarytokens.com" $candidate)
+	if [[ ! -z "$isSensComCan" ]]
 	then
 		mkdir tmp
 		echo -e "${BOLDRED}Canary token detected in file:${ENDCOLOR} $candidate"
 		((sensitiveCommandCanaries++))
 		echo $candidate >> sensitiveCommandCanaries.list
 		cp "$candidate" "tmp/$candidate"
-		sensCandidateCount=$(grep "*CMD*canarytokens.com" $candidate | wc -l | awk '{print $1}')
+		sensCandidateCount=$(grep -e ".*CMD.*canarytokens.com" $candidate | wc -l | awk '{print $1}')
 		sensitiveCommandCanaries=$(echo "$sensitiveCommandCanaries + $sensCandidateCount" | bc)
 		if [[ $test_only == "0" ]]
 		then 
@@ -190,6 +191,7 @@ sensitive_command () {
 		if [[ $verbose == "1" ]]; then echo "${BOLDGREEN}No canary token detected${ENDCOLOR}"; fi
 	fi
 	rm -Rf tmp
+
 
 }
 
