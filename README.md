@@ -8,8 +8,7 @@ A simple script to detect and remove [***Canary Tokens***](https://canarytokens.
 ```bash
 git clone https://github.com/referefref/canarytokendetector.git
 cd canarytokendetector
-sudo apt update
-sudo apt install pdftk-java python3 python3-pip -y
+brew install pdftk-java python3 python3-pip -y
 pip3 install pefile
 wget https://raw.githubusercontent.com/DidierStevens/DidierStevensSuite/master/disitool.py
 ```
