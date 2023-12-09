@@ -1,4 +1,4 @@
-# Microsoft Word Canary Token Detector
+# Thinkst Canarytokens Detector and Diffuser/Nullifier
 
 A simple script to detect and remove [***Canary Tokens***](https://canarytokens.org/) 
 
